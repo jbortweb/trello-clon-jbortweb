@@ -3,14 +3,15 @@ import TrelloCard from '../TrelloCard/TrelloCard';
 import './TrelloList.scss';
 import EditIcon from '@mui/icons-material/Edit';
 import ClearIcon from '@mui/icons-material/Clear';
+import { connect } from 'react-redux';
 
-const TrelloList = () => {
+const TrelloList = (lists) => {
   return (
 
     <div>
       <div className='container'>
           <div className='tarjeta_titulo'>
-            <h2>titulo</h2>
+            <h2>{lists.title}</h2>
               <div
                 className='icon-edit'>
                   <div>
@@ -29,4 +30,4 @@ const TrelloList = () => {
   )
 }
 
-export default TrelloList
+export default connect()(TrelloList)

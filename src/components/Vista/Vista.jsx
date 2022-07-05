@@ -10,7 +10,7 @@ const Vista = () => {
             <Header/>
         </div>
         <div>
-            <TrelloList/>
+            <TrelloList title='lista'/>
         </div>
     </div>
   )

@@ -5,13 +5,14 @@ import EditIcon from '@mui/icons-material/Edit';
 import ClearIcon from '@mui/icons-material/Clear';
 import { connect } from 'react-redux';
 
-const TrelloList = (lists) => {
+const TrelloList = ({title}) => {
+
   return (
 
     <div>
       <div className='container'>
           <div className='tarjeta_titulo'>
-            <h2>{lists.title}</h2>
+            <h2>{title}</h2>
               <div
                 className='icon-edit'>
                   <div>
@@ -30,4 +31,4 @@ const TrelloList = (lists) => {
   )
 }
 
-export default connect()(TrelloList)
+export default (TrelloList)

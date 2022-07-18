@@ -15,12 +15,15 @@ const Vista = (props) => {
             <Header/>
         </div>
         <div>
-            {lists.map(list => (
+            {React.Children.toArray(lists.map((list,index) => (
             <TrelloList
-            title={list.title}
-            cards={list.cards}
+            listID= {list.id}
+            title= {list.title}
+            cards= {list.cards}
+            key= {list.id}
+            index= {index}
             />
-            ))}
+            )))}
         </div>
     </div>
   )

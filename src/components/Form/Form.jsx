@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 
-const Form = () => {
-    const [openForm,setOpenForm] = state(falso);
+//Creamos componente reutilizable para el formulario de las listas y cartas nuevas.
+
+const FormNew = () => {
 
   return (
     <div>
@@ -11,4 +12,4 @@ const Form = () => {
   )
 }
 
-export default Form
+export default FormNew

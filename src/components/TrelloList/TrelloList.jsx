@@ -3,8 +3,12 @@ import TrelloCard from '../TrelloCard/TrelloCard';
 import './TrelloList.scss';
 import EditIcon from '@mui/icons-material/Edit';
 import ClearIcon from '@mui/icons-material/Clear';
+import FormNew from "../Form/Form.jsx";
 
-const TrelloList = ({title}) => {
+
+//Creamos el componente de las listas
+
+const TrelloList = ({title, cards, listID}) => {
 
   return (
 
@@ -22,9 +26,16 @@ const TrelloList = ({title}) => {
                   </div>
               </div>
           </div>
-        <div>
-          <TrelloCard/>
-        </div>
+          <div>
+            {React.Children.toArray(cards.map((card) => (
+              <TrelloCard
+              text={card.text}
+              key={card.id}
+              id={card.id}
+              listID = {listID}
+              />
+            )))}
+          </div>
       </div>
     </div>      
   )

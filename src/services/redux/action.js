@@ -43,7 +43,7 @@ export const deleteListAction = (listID) => {
     };
 };
 
-    //Editar tirulo lista
+    //Editar titulo lista
 
 export const editListAction = (listID, newTitle) => {
     return {

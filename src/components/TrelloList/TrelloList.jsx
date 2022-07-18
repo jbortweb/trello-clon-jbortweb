@@ -1,44 +1,122 @@
-import React from 'react';
-import TrelloCard from '../TrelloCard/TrelloCard';
-import './TrelloList.scss';
+import React from "react";
+import "./TrelloList.scss";
+import TrelloCard from "../TrelloCard/TrelloCard.jsx";
+import ButtonAction from "../ButtonAction/ButtonAction";
+import { Draggable, Droppable } from "react-beautiful-dnd";
+import { connect } from "react-redux";
+import { useState } from "react";
 import EditIcon from '@mui/icons-material/Edit';
-import ClearIcon from '@mui/icons-material/Clear';
-import FormNew from "../Form/Form.jsx";
+import { deleteListAction, editListAction } from "../../services/redux/action";
 
 
-//Creamos el componente de las listas
 
-const TrelloList = ({title, cards, listID}) => {
+    //Creamos la vista de la lista y la funcionalidad para arrastrarla
 
-  return (
+const TrelloList = ({ title, cards, listID, index, dispatch }) => {
 
-    <div>
-      <div className='container'>
-          <div className='tarjeta_titulo'>
-            <h2>{title}</h2>
-              <div
-                className='icon-edit'>
-                  <div>
-                    <EditIcon/>
-                  </div>
-                  <div>
-                    <ClearIcon/>
-                  </div>
-              </div>
-          </div>
-          <div>
-            {React.Children.toArray(cards.map((card) => (
-              <TrelloCard
-              text={card.text}
-              key={card.id}
-              id={card.id}
-              listID = {listID}
-              />
-            )))}
-          </div>
+  const [onEdit, setOnEdit] = useState(false);
+  const [onTextEdit, setOnTextEdit] = useState(title)
+
+ 
+  const deleteList = (e)=> {
+    dispatch(deleteListAction(listID));
+  };
+  
+  const handleChangeEdit = (e) => {
+    setOnTextEdit(e.target.value)
+  };
+
+  const saveEdit = () => {
+    
+    dispatch(editListAction( listID, onTextEdit));
+    setOnEdit(false);
+  };
+
+  const editList = () => {
+    return(
+      
+      <div className="container-area">
+        <div>
+          <textarea
+            className="listAreaText"
+            text = {onTextEdit}
+            placeholder= "Ponga el título de su lista"
+            autoFocus
+            onChange={handleChangeEdit}
+          >
+          </textarea>
+        </div>
+        <div>
+          <button
+            className="edit-buttonList"
+            onClick= {saveEdit}
+            > Guardar
+          </button>
+        </div>          
       </div>
-    </div>      
-  )
-}
-
-export default (TrelloList)
+    )
+  }
+  const onlyList = () => {
+    return (
+      <Draggable draggableId={String(listID)} index={index}>
+        {(provided) => (
+          <div 
+          {...provided.draggableProps} 
+          ref={provided.innerRef} 
+          {...provided.dragHandleProps}
+          >
+            <Droppable droppableId={String(listID)}>
+              {(provided) => (
+                <div 
+                  ref={provided.innerRef} 
+                  {...provided.droppableProps}>
+                    <div className="container">
+                      <div> 
+                        {onEdit ? (
+                          editList()
+                          ) : (
+                            <div className="container-titulo">
+                              <h4 className="tarjeta_titulo">
+                                {onTextEdit}
+                              </h4>
+                              <div className="container-edit">
+                                <button
+                                  className="delete-iconList" 
+                                  onMouseDown={(deleteList)}
+                                  title = 'Delete'>
+                                  X
+                                </button>
+                                <EditIcon
+                                  className="edit-iconList"
+                                  onClick= {() => setOnEdit(true)}/>
+                              </div>
+                            </div>
+                        )}
+                      </div>
+                      <div>
+                        {React.Children.toArray(cards.map((card, index) => (
+                            <TrelloCard
+                            text={card.text}
+                            key={card.id}
+                            index={index}
+                            id={card.id}
+                            listID = {listID}
+                          />
+                          )))}
+                          {provided.placeholder}
+                          <ButtonAction listID={listID} />
+                      </div>
+                    </div>
+                </div>
+              )}
+            </Droppable>
+          </div>
+        )}
+      </Draggable>
+    );
+  }
+  return (
+    onlyList()
+  );
+};
+  export default connect()(TrelloList);

@@ -7,8 +7,6 @@ import ButtonAction from "../../components/ButtonAction/ButtonAction";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import { sort } from "../../services/redux/action";
 
-    //Funcion de drop and drag
-
 const Vista = (props) => {
     const { lists } = props;
 

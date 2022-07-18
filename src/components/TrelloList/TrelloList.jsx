@@ -14,17 +14,25 @@ import { deleteListAction, editListAction } from "../../services/redux/action";
 
 const TrelloList = ({ title, cards, listID, index, dispatch }) => {
 
+  //Estado para mostrar el formulario para editar el titulo
   const [onEdit, setOnEdit] = useState(false);
+
+  //Estado del texto
   const [onTextEdit, setOnTextEdit] = useState(title)
 
- 
+  //Funcion para eliminar lista
+
   const deleteList = (e)=> {
     dispatch(deleteListAction(listID));
   };
-  
+
+  //Mostar cambios de estado en el textarea
+
   const handleChangeEdit = (e) => {
     setOnTextEdit(e.target.value)
   };
+
+  //Guardar el nuevo titulo de la lista
 
   const saveEdit = () => {
     
@@ -32,6 +40,7 @@ const TrelloList = ({ title, cards, listID, index, dispatch }) => {
     setOnEdit(false);
   };
 
+  //Formulario para editar el tiulo de la lista
   const editList = () => {
     return(
       
@@ -56,6 +65,9 @@ const TrelloList = ({ title, cards, listID, index, dispatch }) => {
       </div>
     )
   }
+    
+    //Vista de la lista con las cartas
+
   const onlyList = () => {
     return (
       <Draggable draggableId={String(listID)} index={index}>

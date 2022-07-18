@@ -1,6 +1,6 @@
 import React from "react";
 import Textarea from "react-textarea-autosize";
-import "./ButtonAction.scss";
+import "./Form.scss";
 import Button from "@mui/material/Button";
 import Icon from "@mui/icons-material/Close";
 import { addList, addCard } from "../../services/redux/action.js";

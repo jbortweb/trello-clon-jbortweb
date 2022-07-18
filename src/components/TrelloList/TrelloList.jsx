@@ -3,7 +3,6 @@ import TrelloCard from '../TrelloCard/TrelloCard';
 import './TrelloList.scss';
 import EditIcon from '@mui/icons-material/Edit';
 import ClearIcon from '@mui/icons-material/Clear';
-import { connect } from 'react-redux';
 
 const TrelloList = ({title}) => {
 

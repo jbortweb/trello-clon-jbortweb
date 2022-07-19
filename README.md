@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+<h1 align="center">Trello-clon creado por jbortweb</h1>
+<h3 align="center">con el framework React</h3>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Un tablero similar a Trello construido con React y Redux.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Características
 
-### `npm start`
+- Crea listas y tarjetas para organizar tus tareas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Añade listas y tarjetas según tu conveniencia
+- Edita y/o elimina listas y tarjetas cuando ya no las necesites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Desarrollo
+Clona el repositorio e instala las dependencias:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+git clone https://github.com/jbortweb/trello-clon-jbortweb.git
+cd trello-clon-jbortweb
+npm install
+```
 
-### `npm run build`
+Inicie el servidor de desarrollo::
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Tecnología
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React, Redux.
+- UseState, mui/icons-material, react-beautiful-dnd
+- Jsx, Scss
 
-### `npm run eject`
+## Dirección web 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<a href="https://jbortweb.github.io/trello-clon-jbortweb/">Trello-clon</a>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<h3>Contacto</h3>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<a href="https://www.linkedin.com/in/jordi-bort/" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg" alt="Jordi Bort" height="15" width="40" />linkedin</a>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<a href="mailto:jbortweb@gmail.com " target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/gmail.svg" alt="Jordi Bort" height="15" width="40" />jbortweb@gmail.com</a>

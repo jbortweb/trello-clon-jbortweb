@@ -1,7 +1,7 @@
 import React from "react";
 import "./TrelloList.scss";
 import TrelloCard from "../TrelloCard/TrelloCard.jsx";
-import ButtonAction from "../ButtonAction/ButtonAction";
+import FormNew from "../Form/Form.jsx";
 import { Draggable, Droppable } from "react-beautiful-dnd";
 import { connect } from "react-redux";
 import { useState } from "react";
@@ -116,7 +116,7 @@ const TrelloList = ({ title, cards, listID, index, dispatch }) => {
                           />
                           )))}
                           {provided.placeholder}
-                          <ButtonAction listID={listID} />
+                          <FormNew listID={listID} />
                       </div>
                     </div>
                 </div>

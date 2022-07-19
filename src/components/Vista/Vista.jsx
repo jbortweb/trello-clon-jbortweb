@@ -3,7 +3,7 @@ import './Vista.scss';
 import TrelloList from "../../components/TrelloList/TrelloList.jsx";
 import Header from "../../components/Header/Header.jsx";
 import { connect } from "react-redux";
-import ButtonAction from "../../components/ButtonAction/ButtonAction";
+import FormNew from "../../components/Form/Form.jsx";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import { sort } from "../../services/redux/action";
 
@@ -56,7 +56,7 @@ const Vista = (props) => {
                   />
                 )))}
                 {provided.placeholder}
-                <ButtonAction list />              
+                <FormNew list />              
               </div>
             )}
           </Droppable>

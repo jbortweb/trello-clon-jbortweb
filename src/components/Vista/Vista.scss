@@ -1,10 +1,10 @@
-.App {
+.panel {    
+    display: flex;
     background-image: url('../../image/desk.jpg');
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: auto;
     background-size: cover;
     min-height: 100vh;
-}
-.panel {
-    display: flex;
 }

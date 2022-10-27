@@ -21,7 +21,7 @@ cd trello-clon-jbortweb
 npm install
 ```
 
-Inicie el servidor de desarrollo::
+Inicie el servidor de desarrollo:
 
 ```
 npm start
